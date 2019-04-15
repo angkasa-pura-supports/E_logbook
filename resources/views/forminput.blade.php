@@ -87,29 +87,29 @@
                           <?php echo csrf_field(); ?>
                             <div class="form-group">
                                 <label for="recipient-name" class="control-label"> Nama Project:</label>
-                                <input type="text" class="form-control" id="nama-project" name="nama_project">
+                                <input type="text" class="form-control" id="nama-project" name="nama_project" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> No Kontrak:</label>
-                                <input type="text" class="form-control" id="no-kontrak" name="no_kontrak">
+                                <input type="text" class="form-control" id="no-kontrak" name="no_kontrak" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Tgl Kontrak:</label>
 
-                                    <input class="form-control" type="date" value="" id="tgl-kontrak" name="tgl_kontrak">
+                                    <input class="form-control" type="date" value="" id="tgl-kontrak" name="tgl_kontrak" required="required">
 
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Jangka Waktu:</label>
-                                <input type="text" class="form-control" id="jangka-waktu" name="jangka_waktu">
+                                <input type="text" class="form-control" id="jangka-waktu" name="jangka_waktu" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Nilai Kontrak:</label>
-                                <input type="text" class="form-control" id="nilai" name="nilai_total">
+                                <input type="text" class="form-control" id="nilai" name="nilai_total" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Keterangan:</label>
-                                <input type="text" class="form-control" id="ket" name="ket">
+                                <input type="text" class="form-control" id="ket" name="ket" required="required">
                             </div>
 
                     </div>
