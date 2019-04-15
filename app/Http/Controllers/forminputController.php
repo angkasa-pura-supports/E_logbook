@@ -8,6 +8,27 @@ class forminputController extends Controller
 {
   public function index()
   {
-    return view ('forminput');
+      $trading = DB::table('trading')->get();
+      return view('index', ['trading'=>$trading]);
+
+  }
+
+  public function create()
+  {
+    $data = trading::all();
+      return view('frominput',['data'=>$data]);
+  }
+
+  public function store(Request $request)
+  {
+    DB::table('trading')->insert([
+        'nama_project' => $request->nama_project,
+        'no_kontrak' => $request->no_kontrak,
+        'tgl_kontrak' => $request->tgl_kontrak,
+        'jangka_waktu' => $request->jangka_waktu,
+        'nilai_total' => $request->nilai_total,
+        'ket' => $request->ket
+      ]);
+      return redirect('/LocToilet');
   }
 }
