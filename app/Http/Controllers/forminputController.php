@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\trading;
+use Illuminate\Support\Facades\DB;
 
 class forminputController extends Controller
 {
   public function index()
   {
       $trading = DB::table('trading')->get();
-      return view('index', ['trading'=>$trading]);
+      return view('forminput', ['trading'=>$trading]);
 
   }
 
   public function create()
   {
-    $data = trading::all();
+      $data = trading::all();
       return view('frominput',['data'=>$data]);
   }
 
@@ -29,6 +31,6 @@ class forminputController extends Controller
         'nilai_total' => $request->nilai_total,
         'ket' => $request->ket
       ]);
-      return redirect('/LocToilet');
+      return redirect('/forminput');
   }
 }

@@ -29,47 +29,52 @@
                       <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                           <thead>
                               <tr>
+                                <th>No</th>
                                   <th>Nama Project</th>
-                                  <th>No. Kontrak</th>
+
                                   <th>Tgl.Kontrak</th>
                                   <th>Jangka Waktu</th>
                                   <th>Nilai Kontrak</th>
                                   <th>Keterangan</th>
+                                  <th>Action</th>
                               </tr>
                           </thead>
                           <tfoot>
                               <tr>
+                                  <th>No</th>
                                   <th>Nama Project</th>
-                                  <th>No. Kontrak</th>
+
                                   <th>Tgl. Kontrak</th>
                                   <th>Jangka Waktu</th>
                                   <th>Nilai Kontrak</th>
                                   <th>Keterangan</th>
+                                  <th>Action</th>
                               </tr>
                           </tfoot>
                           <tbody>
+                            @foreach ($trading as $view )
                               <tr>
-                                  <td>Tiger Nixon</td>
-                                  <td>System Architect</td>
-                                  <td>Edinburgh</td>
-                                  <td>61</td>
-                                  <td>2011/04/25</td>
-                                  <td>$320,800</td>
+                                <th>{{ $view->id}}</th>
+                                <th>{{$view->nama_project}}</th>
+                                <th>{{$view->tgl_kontrak}}</th>
+                                <th>{{$view->jangka_waktu}}</th>
+                                <th>{{$view->nilai_total}}</th>
+                                <th>{{$view->ket}}</th>
+                                <th>
+
+                                    <button type="button" class="btn btn-info"><i class="fa fa-search-plus"></i></button>
+                                    <button type="button" class="btn btn-warning"><i class="ti-pencil"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="ti-trash"></i></button>
+                                </th>
                               </tr>
-                              <tr>
-                                  <td>Garrett Winters</td>
-                                  <td>Accountant</td>
-                                  <td>Tokyo</td>
-                                  <td>63</td>
-                                  <td>2011/07/25</td>
-                                  <td>$170,750</td>
-                              </tr>
+                            @endforeach
                           </tbody>
                       </table>
                   </div>
               </div>
           </div>
         </div>
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -78,24 +83,25 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ asset ('Create')}}" method="POST">
+                          <?php echo csrf_field(); ?>
                             <div class="form-group">
                                 <label for="recipient-name" class="control-label"> Nama Project:</label>
-                                <input type="text" class="form-control" id="nama-project">
+                                <input type="text" class="form-control" id="nama-project" name="nama_project">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> No Kontrak:</label>
-                                <input type="text" class="form-control" id="no-kontrak">
+                                <input type="text" class="form-control" id="no-kontrak" name="no_kontrak">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Tgl Kontrak:</label>
 
-                                    <input class="form-control" type="date" value="#" id="tgl-kontrak">
+                                    <input class="form-control" type="date" value="#" id="tgl-kontrak" name="tgl_kontrak">
 
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Jangka Waktu:</label>
-                                <input type="text" class="form-control" id="jangka-waktu">
+                                <input type="text" class="form-control" id="jangka-waktu" name="jangka_waktu">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Nilai Kontrak:</label>
@@ -103,17 +109,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Keterangan:</label>
-                                <input type="text" class="form-control" id="ket">
+                                <input type="text" class="form-control" id="ket" name="ket">
                             </div>
-                        </form>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </div>
             </div>
         </div>
+              </form>
         <!-- /.modal -->
 
 @endsection
