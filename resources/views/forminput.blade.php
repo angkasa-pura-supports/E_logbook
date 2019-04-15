@@ -96,7 +96,7 @@
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Tgl Kontrak:</label>
 
-                                    <input class="form-control" type="date" value="#" id="tgl-kontrak" name="tgl_kontrak">
+                                    <input class="form-control" type="date" value="" id="tgl-kontrak" name="tgl_kontrak">
 
                             </div>
                             <div class="form-group">
@@ -105,7 +105,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Nilai Kontrak:</label>
-                                <input type="text" class="form-control" id="nilai">
+                                <input type="text" class="form-control" id="nilai" name="nilai_total">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Keterangan:</label>
