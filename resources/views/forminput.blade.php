@@ -25,13 +25,12 @@
               <div class="card-body">
                   <h4 class="card-title">Data Project Trading</h4>
                   <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
-                  <div class="table-responsive m-t-40">
-                      <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                  <div class="table-responsive">
+                      <table id="example23" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                           <thead>
                               <tr>
                                 <th>No</th>
                                   <th>Nama Project</th>
-
                                   <th>Tgl.Kontrak</th>
                                   <th>Jangka Waktu</th>
                                   <th>Nilai Kontrak</th>
@@ -39,18 +38,6 @@
                                   <th>Action</th>
                               </tr>
                           </thead>
-                          <tfoot>
-                              <tr>
-                                  <th>No</th>
-                                  <th>Nama Project</th>
-
-                                  <th>Tgl. Kontrak</th>
-                                  <th>Jangka Waktu</th>
-                                  <th>Nilai Kontrak</th>
-                                  <th>Keterangan</th>
-                                  <th>Action</th>
-                              </tr>
-                          </tfoot>
                           <tbody>
                             @foreach ($trading as $view )
                               <tr>
@@ -61,7 +48,6 @@
                                 <th>{{$view->nilai_total}}</th>
                                 <th>{{$view->ket}}</th>
                                 <th>
-
                                     <button type="button" class="btn btn-info"><i class="fa fa-search-plus"></i></button>
                                     <button type="button" class="btn btn-warning"><i class="ti-pencil"></i></button>
                                     <button type="button" class="btn btn-danger"><i class="ti-trash"></i></button>
@@ -109,9 +95,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Keterangan:</label>
-                                <input type="text" class="form-control" id="ket" name="ket" required="required">
+                                <textarea type="text" class="form-control" id="ket" name="ket" required="required"></textarea>
                             </div>
-
+                            <div class="form-group">
+                                <label for="message-text" class="control-label"> File Scan Kontrak:</label>
+                                <input type="file" class="form-control" id="exampleInputFile" aria-describedby="fileHelp">
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

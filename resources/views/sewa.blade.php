@@ -26,7 +26,7 @@
                   <h4 class="card-title">Data Project Sewa</h4>
                   <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                   <div class="table-responsive m-t-40">
-                      <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                      <table id="example23" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                           <thead>
                               <tr>
                                   <th>Nama Project</th>
@@ -37,34 +37,7 @@
                                   <th>Keterangan</th>
                               </tr>
                           </thead>
-                          <tfoot>
-                              <tr>
-                                  <th>Nama Project</th>
-                                  <th>No. Kontrak</th>
-                                  <th>Tgl. Kontrak</th>
-                                  <th>Jangka Waktu</th>
-                                  <th>Nilai Kontrak</th>
-                                  <th>Keterangan</th>
-                              </tr>
-                          </tfoot>
-                          <tbody>
-                              <tr>
-                                  <td>Tiger Nixon</td>
-                                  <td>System Architect</td>
-                                  <td>Edinburgh</td>
-                                  <td>61</td>
-                                  <td>2011/04/25</td>
-                                  <td><a href="#">View</a> <a href="#">Edit</a> <a href="#">Delete</a></td>
-                              </tr>
-                              <tr>
-                                  <td>Garrett Winters</td>
-                                  <td>Accountant</td>
-                                  <td>Tokyo</td>
-                                  <td>63</td>
-                                  <td>2011/07/25</td>
-                                  <td><a href="#">View</a> <a href="#">Edit</a> <a href="#">Delete</a></td>
-                              </tr>
-                          </tbody>
+
                       </table>
                   </div>
               </div>
@@ -78,42 +51,46 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ asset ('Create')}}" method="POST">
+                          <?php echo csrf_field(); ?>
                             <div class="form-group">
                                 <label for="recipient-name" class="control-label"> Nama Project:</label>
-                                <input type="text" class="form-control" id="nama-project">
+                                <input type="text" class="form-control" id="nama-project" name="nama_project" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> No Kontrak:</label>
-                                <input type="text" class="form-control" id="no-kontrak">
+                                <input type="text" class="form-control" id="no-kontrak" name="no_kontrak" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Tgl Kontrak:</label>
 
-                                    <input class="form-control" type="date" value="#" id="tgl-kontrak">
+                                    <input class="form-control" type="date" value="" id="tgl-kontrak" name="tgl_kontrak" required="required">
 
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Jangka Waktu:</label>
-                                <input type="text" class="form-control" id="jangka-waktu">
+                                <input type="text" class="form-control" id="jangka-waktu" name="jangka_waktu" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Nilai Kontrak:</label>
-                                <input type="text" class="form-control" id="nilai">
+                                <input type="text" class="form-control" id="nilai" name="nilai_total" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="control-label"> Keterangan:</label>
-                                <input type="text" class="form-control" id="ket">
+                                <textarea type="text" class="form-control" id="ket" name="ket" required="required"></textarea>
                             </div>
-                        </form>
+                            <div class="form-group">
+                                <label for="message-text" class="control-label"> File Scan Kontrak:</label>
+                                <input type="file" class="form-control" id="exampleInputFile" aria-describedby="fileHelp">
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </div>
             </div>
         </div>
+              </form>
         <!-- /.modal -->
-
 @endsection

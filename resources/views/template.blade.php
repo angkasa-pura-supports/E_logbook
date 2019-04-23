@@ -339,7 +339,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{ asset ('formpots') }}">POTS </a></li>
                                 <li><a href="{{ asset ('formgw') }}">GIANT WALL</a></li>
-                                <li><a href="#">WIFI 13 BANDARA</a></li>
+                                <li><a href="{{ asset ('formwifi') }}">WIFI 13 BANDARA</a></li>
                                 <li><a href="#">SELF CHECKIN KIOS K</a></li>
                                 <li><a href="#">SEAT MANAGEMENT</a></li>
                             </ul>
