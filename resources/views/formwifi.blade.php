@@ -26,20 +26,18 @@
                       <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                       <div class="table-responsive">
                           <table id="example23" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                            <style type="text">
-                                
+
                                     <thead>
                                       <tr>
-                                          <th rowspan="2">No</th>
-                                          <th rowspan="2">Perangkat</th>
-                                          <th colspan="3">Status Shift 1</th>
-                                          <th colspan="3">Status Shift 2</th>
-                                          <th rowspan="2" colspan="2">Keterangan</th>
-
+                                          <th rowspan="2"><center style="margin:auto; margin-top: -50px;">No</center></th>
+                                          <th rowspan="2"><center style="margin: auto; margin-top: -50px;">Perangkat</center></th>
+                                          <th colspan="3"><center style="margin:auto; margin-top: -5px;">Status Shift 1</center></th>
+                                          <th colspan="3"><center style="margin:auto; margin-top: -5px;">Status Shift 2</center></th>
+                                          <th rowspan="2" colspan="2"><center style="margin:auto; margin-top: -50px;">Keterangan</center></th>
                                       </tr>
                                       <tr>
                                           <th>Down</th>
-                                          <th>Up</th>
+                                          <th><center>Up</center></th>
                                           <th>Jam</th>
                                           <th>Down</th>
                                           <th>Up</th>

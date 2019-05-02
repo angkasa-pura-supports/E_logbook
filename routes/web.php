@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/forminput', 'forminputController@index')->name('forminput');
 Route::post('/Create', 'forminputController@store')->name('Create');
@@ -24,3 +25,5 @@ Route::get('/sewa', 'sewaController@index')->name('sewa');
 Route::get('/formpots', 'formpotsController@index')->name('formpots');
 Route::get('/formgw', 'formgwController@index')->name('formgw');
 Route::get('/formwifi', 'formwifiController@index')->name('formwifi');
+Route::get('/self', 'selfController@index')->name('self');
+Route::get('/permintaan', 'permintaanController@index')->name('permintaan');
