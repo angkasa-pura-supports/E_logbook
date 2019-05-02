@@ -14,15 +14,8 @@ Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
 });
-
-<<<<<<< HEAD
-Auth::routes();
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-=======
 Route::get('/Dashboard','DashboardController@create')->name('Dashboard');
->>>>>>> e68e07d3ca8586f25e73b6ed8dba7bb64de00f9c
 Route::get('/forminput', 'forminputController@index')->name('forminput');
 Route::post('/Create', 'forminputController@store')->name('Create');
 Route::get('/sewa', 'sewaController@index')->name('sewa');
