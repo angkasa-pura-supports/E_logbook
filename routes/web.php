@@ -15,10 +15,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
-
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/Dashboard','DashboardController@create')->name('Dashboard');
 Route::get('/forminput', 'forminputController@index')->name('forminput');
