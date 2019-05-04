@@ -8,6 +8,11 @@ class formwifiController extends Controller
 {
   public function index()
   {
-    return view ('formwifi');
+    return view ('content.wifi.index');
+  }
+
+  public function create()
+  {
+    return view ('content.wifi.create');
   }
 }

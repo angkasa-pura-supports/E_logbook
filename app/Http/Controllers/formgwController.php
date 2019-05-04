@@ -13,7 +13,7 @@ class formgwController extends Controller
      */
     public function index()
     {
-        return view ('formgw');
+        return view ('content.giant_wall.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class formgwController extends Controller
      */
     public function create()
     {
-        //
+        return view ('content.giant_wall.create');
     }
 
     /**

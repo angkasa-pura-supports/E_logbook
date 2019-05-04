@@ -1,6 +1,21 @@
 @extends('front.layouts.front')
-
 @section('content')
+  <div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                <h4 class="text-themecolor">Bandara</h4>
+            </div>
+            <div class="col-md-7 align-self-center text-right">
+                <div class="d-flex justify-content-end align-items-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Master Data</a></li>
+                        <li class="breadcrumb-item">Bandara</li>
+                        <li class="breadcrumb-item active">Tambah</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
   <div class="row">
       <div class="col-sm-12">
           <div class="card card-body">
@@ -8,7 +23,7 @@
               <h6 class="card-subtitle"> Passengers On Ticket System </h6>
               <form class="form-horizontal m-t-40">
                 <div class="form-group row">
-                    <label for="example-date-input" class="col-2 col-form-label">Tgl Log Book</label>
+                    <label for="example-date-input" id="mdate" class="col-2 col-form-label">Tgl Log Book</label>
                     <div class="col-3">
                         <input class="form-control" type="date" value="#" id="example-date-input">
                     </div>
@@ -45,4 +60,7 @@
           </div>
       </div>
   </div>
+</div>
+</div>
+</div>
 @endsection
