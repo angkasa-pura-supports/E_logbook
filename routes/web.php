@@ -21,6 +21,7 @@ Route::post('/formpots', 'formpotsController@create')->name('formpots.store')->m
 
 Route::get('/formgw', 'formgwController@index')->name('formgw.index');
 Route::get('/formgw/create', 'formgwController@create')->name('formgw.create');
+Route::post('/formgw', 'formgwController@store')->name('formgw.store');
 
 Route::get('/formwifi', 'formwifiController@index')->name('formwifi.index');
 Route::get('/formwifi/create', 'formwifiController@create')->name('formwifi.create');

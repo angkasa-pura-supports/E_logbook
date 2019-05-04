@@ -22,42 +22,54 @@
     <div class="col-sm-12">
         <div class="card card-body">
             <h4 class="card-title">GIANT WALL</h4>
-            <form class="form-horizontal m-t-40">
-              <div class="form-group row">
-                  <label for="example-date-input" class="col-2 col-form-label">Tgl Log Book</label>
+            {!! Form::open(['route'=>'formgw.store', 'files'=>true, 'class'=>'form-horizontal m-t-40']) !!}
+              <div class="row form-group{{ $errors->has('tgl_log') ? ' has-danger' : '' }}">
+                  {!! Form::label('tgl_log', 'Tgl Log Book', ['class'=>'col-2 col-form-label']) !!}
                   <div class="col-3">
-                      <input class="form-control" type="date" value="#" id="example-date-input">
+                      {!! Form::date('tgl_log', null, ['class'=>'form-control', 'id'=>'example-date-input']) !!}
+                      @if ($errors->has('tgl_log'))
+                        <small class="form-control-feedback">
+                          {{ $errors->first('tgl_log') }}
+                        </small>
+                      @endif
                   </div>
               </div>
 
-                <div class="form-group">
-                    <label>Uraian Laporan</label>
-                    <textarea class="form-control" rows="5"></textarea>
+                <div class="form-group{{ $errors->has('uraian_lap') ? ' has-danger' : '' }}">
+                    {!! Form::label('uraian_lap', 'Uraian Laporan', ['class'=>'col-2 col-form-label']) !!}
+                    {!! Form::textarea('uraian_lap', null, ['class'=>'form-control', 'rows'=>'5']) !!}
+                    @if ($errors->has('uraian_lap'))
+                      <small class="form-control-feedback">
+                        {{ $errors->first('uraian_lap') }}
+                      </small>
+                    @endif
                 </div>
-                <div class="form-group row">
-                    <label for="example-month-input" class="col-2 col-form-label">Jabatan</label>
+                <div class="row form-group{{ $errors->has('jabatan') ? ' has-danger' : '' }}">
+                    {!! Form::label('jabatan', 'Jabatan', ['class'=>'col-2 col-form-label']) !!}
                     <div class="col-10">
-                        <select class="custom-select col-12" id="inlineFormCustomSelect">
-                            <option selected="">Pilih...</option>
-                            <option value="tl">Team Leader</option>
-                            <option value="tk">Teknisi</option>
-                            <option value="op">Operator</option>
-                            <option value="ad">Admin</option>
-                            <option value="pr">Petugas Rekonsiliasi</option>
-                        </select>
+                        {!! Form::select('jabatan', [''=>'-- Pilih --', 't1'=>'Team Leader', 'tk'=>'Teknisi', 'op'=>'Operator', 'ad'=>'Admin', 'pr'=>'Petugas Rekonsiliasi'], null, ['class'=>'custom-select col-12']) !!}
+                        @if ($errors->has('jabatan'))
+                          <small class="form-control-feedback">
+                            {{ $errors->first('jabatan') }}
+                          </small>
+                        @endif
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Lampiran Foto</label>
-                    <input type="file" class="form-control" id="exampleInputFile" aria-describedby="fileHelp">
+                <div class="form-group{{ $errors->has('lampiran') ? ' has-danger' : '' }}">
+                    {!! Form::label('lampiran', 'Lampiran Foto') !!}
+                    {!! Form::file('lampiran', ['class'=>'form-control']) !!}
+                    @if ($errors->has('lampiran'))
+                      <small class="form-control-feedback">
+                        {{ $errors->first('lampiran') }}
+                      </small>
+                    @endif
                 </div>
-                <div class="form-group">
-                    <label>Keterangan</label>
-                    <input type="text" class="form-control">
+                <div class="form-group{{ $errors->has('ket') ? ' has-danger' : '' }}">
+                    {!! Form::label('ket', 'Keterangan') !!}
+                    {!! Form::text('ket', null, ['class'=>'form-control']) !!}
                     <br><br>
-                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="float:right;">Clear</button>
-                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="float:right;">Simpan</button>
-            </form>
+                    {!! Form::submit('Simpan', ['class'=>'btn btn-success waves-light m-r-10', 'style'=>'float:right']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

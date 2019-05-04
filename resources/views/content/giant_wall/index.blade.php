@@ -1,4 +1,7 @@
 @extends('front.layouts.front')
+@section('cssAssets')
+  @include('front.partials.css.cssSweetAlert')
+@endsection
 @section('content')
 <div class="page-wrapper">
   <div class="container-fluid">
@@ -68,4 +71,8 @@
 </div>
 </div>
 </div>
+@endsection
+@section('jsAssets')
+  @include('front.partials.js.jsSweetAlert')
+  @include('sweet::alert')
 @endsection
