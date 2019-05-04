@@ -29,8 +29,16 @@ class formpotsController extends Controller
          'lampiran' => 'required',
          'ket' => 'required'
        ]);
-       Bandara::create($request->all());
+
+       $E_pots = new \App\E_log_pots();
+        $file = $request->file('lampiran');
+        $ext = $file->getClientOriginalExtension();
+        $newName = rand(100000,1001238912).".".$ext;
+        $file->move('uploads/file',$newName);
+        $E_pots->file = $newName;
+        $E_pots->save();
+       E_log_pots::create($request->all());
        Alert::success('Data berhasil disimpan!');
-       return redirect('formpots');
+       return redirect('formpots.index');
     }
 }
