@@ -19,7 +19,10 @@ Route::get('/Dashboard','DashboardController@create')->name('Dashboard');
 Route::get('/forminput', 'forminputController@index')->name('forminput');
 Route::post('/Create', 'forminputController@store')->name('Create');
 Route::get('/sewa', 'sewaController@index')->name('sewa');
+
 Route::get('/formpots', 'formpotsController@index')->name('formpots');
+Route::get('/formpots/create', 'formpotsController@create')->name('formpots.create');
+
 Route::get('/formgw', 'formgwController@index')->name('formgw');
 Route::get('/formwifi', 'formwifiController@index')->name('formwifi');
 Route::get('/self', 'selfController@index')->name('self');
