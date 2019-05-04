@@ -15,6 +15,8 @@ Route::resource('access-permission', 'Sistem\AccessPermissionController');
 //POTS
 Route::get('/formpots', 'formpotsController@index')->name('formpots.index')->middleware('permission:Link Pots');
 Route::get('/formpots/create', 'formpotsController@create')->name('formpots.create')->middleware('permission:Create Pots');
+Route::post('/formpots', 'formpotsController@create')->name('formpots.store')->middleware('permission:Create Pots');
+
 
 
 Route::get('/formgw', 'formgwController@index')->name('formgw.index');
