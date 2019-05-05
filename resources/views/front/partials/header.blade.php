@@ -17,7 +17,8 @@
                  <!-- dark Logo text -->
                  <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
                  <!-- Light Logo text -->
-                 <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" /></span> </a>
+                 <a href="#" style="font-size: 20px;">E logBook ICT</a>
+                 {{-- <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" /></span> </a> --}}
         </div>
         <!-- ============================================================== -->
         <!-- End Logo -->
