@@ -15,7 +15,11 @@ Route::resource('access-permission', 'Sistem\AccessPermissionController');
 //POTS
 Route::get('/formpots', 'formpotsController@index')->name('formpots.index')->middleware('permission:Link Pots');
 Route::get('/formpots/create', 'formpotsController@create')->name('formpots.create')->middleware('permission:Create Pots');
-Route::post('/formpots', 'formpotsController@create')->name('formpots.store')->middleware('permission:Create Pots');
+Route::post('/formpots', 'formpotsController@store')->name('formpots.store')->middleware('permission:Create Pots');
+Route::get('/formpots/{id}/edit', 'formpotsController@edit')->name('formpots.edit')->middleware('permission:Update Pots');
+Route::put('/formpots{id}', 'formpotsController@update')->name('formpots.update')->middleware('permission:Update Pots');
+Route::delete('/formpots/{id}', 'formpotsController@destroy')->name('formpots.destroy')->middleware('permission:Delete Pots');
+
 
 
 

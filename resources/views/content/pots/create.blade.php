@@ -19,63 +19,59 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card card-body">
-                    <h4 class="card-title">POTS</h4>
-                    <h6 class="card-subtitle"> Passengers On Ticket System </h6>
-                    {!! Form::open(['route'=>'formpots.store']) !!}
-                    <div class="form-group row">
-                        {!! Form::label('Tanggal', 'Tanggal', ['class'=>'control-label']) !!}
-                        <div class="col-3">
-                            {!! Form::date('tgl_log', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                            @if ($errors->has('tgl_log'))
-                            <small class="form-control-feedback">
-                                {{ $errors->first('tgl_log') }}
-                            </small>
+                    <h4 class="card-title">E_log pots</h4>
+                    {!! Form::open(['route'=>'formpots.store', 'files'=>true, 'class'=>'form-horizontal m-t-40']) !!}
+                      <div class="row form-group{{ $errors->has('tgl_log') ? ' has-danger' : '' }}">
+                          {!! Form::label('tgl_log', 'Tgl Log Book', ['class'=>'col-2 col-form-label']) !!}
+                          <div class="col-3">
+                              {!! Form::date('tgl_log', null, ['class'=>'form-control', 'id'=>'example-date-input']) !!}
+                              @if ($errors->has('tgl_log'))
+                                <small class="form-control-feedback">
+                                  {{ $errors->first('tgl_log') }}
+                                </small>
+                              @endif
+                          </div>
+                      </div>
+
+                        <div class="form-group{{ $errors->has('uraian_lap') ? ' has-danger' : '' }}">
+                            {!! Form::label('uraian_lap', 'Uraian Laporan', ['class'=>'col-2 col-form-label']) !!}
+                            {!! Form::textarea('uraian_lap', null, ['class'=>'form-control', 'rows'=>'5']) !!}
+                            @if ($errors->has('uraian_lap'))
+                              <small class="form-control-feedback">
+                                {{ $errors->first('uraian_lap') }}
+                              </small>
                             @endif
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        {!! Form::label('Uraian Laporan', 'Uraian Laporan', ['class'=>'control-label']) !!}
-                        {!! Form::textarea('uraian_lap', null, ['class'=>'form-control','rows'=>'5', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                        @if ($errors->has('uraian_lap'))
-                        <small class="form-control-feedback">
-                            {{ $errors->first('uraian_lap') }}
-                        </small>
-                        @endif
-                    </div>
-                    <div class="form-group row">
-                        {!! Form::label('Jabatan', 'Jabatan', ['class'=>'control-label']) !!}
-                        <div class="col-10">
-                            {!! Form::select('jabatan',array('Team Leader' =>'Team Leader', 'Teknisi'=>'Teknisi', 'Operator'=>'Operator','Admin'=>'Admin', 'Petugas_rekon'=>'Petugas_rekonsiliasi' ), null, ['class'=>'select2 form-control
-                            custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
-                            @if ($errors->has('jabatan'))
-                            <small class="form-control-feedback">
-                                {{ $errors->first('jabatan') }}
-                            </small>
+                        <div class="row form-group{{ $errors->has('jabatan') ? ' has-danger' : '' }}">
+                            {!! Form::label('jabatan', 'Jabatan', ['class'=>'col-2 col-form-label']) !!}
+                            <div class="col-10">
+                                {!! Form::select('jabatan', [''=>'-- Pilih --', 't1'=>'Team Leader', 'tk'=>'Teknisi', 'op'=>'Operator', 'ad'=>'Admin', 'pr'=>'Petugas Rekonsiliasi'], null, ['class'=>'custom-select col-12']) !!}
+                                @if ($errors->has('jabatan'))
+                                  <small class="form-control-feedback">
+                                    {{ $errors->first('jabatan') }}
+                                  </small>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('lampiran') ? ' has-danger' : '' }}">
+                            {!! Form::label('lampiran', 'Lampiran Foto') !!}
+                            {!! Form::file('lampiran', ['class'=>'form-control']) !!}
+                            @if ($errors->has('lampiran'))
+                              <small class="form-control-feedback">
+                                {{ $errors->first('lampiran') }}
+                              </small>
                             @endif
                         </div>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('Lampiran Foto', 'Lampiran Foto', ['class'=>'control-label']) !!}
-                        {!! Form::file('upload1', ['class'=>'form-control']) !!}
-
-                    </div>
-                    <div class="form-group">
-                        <label>Keterangan</label>
-                        {!! Form::textarea('ket', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                        @if ($errors->has('Keterangan'))
-                        <small class="form-control-feedback">
-                            {{ $errors->first('Keterangan') }}
-                        </small>
-                        @endif
-                        <br><br>
-                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="float:right;">Clear</button>
-                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="float:right;">Simpan</button>
-                        {!! Form::close() !!}
-                    </div>
+                        <div class="form-group{{ $errors->has('ket') ? ' has-danger' : '' }}">
+                            {!! Form::label('ket', 'Keterangan') !!}
+                            {!! Form::text('ket', null, ['class'=>'form-control']) !!}
+                            <br><br>
+                            {!! Form::submit('Simpan', ['class'=>'btn btn-success waves-light m-r-10', 'style'=>'float:right']) !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
+  </div>
 </div>
 @endsection

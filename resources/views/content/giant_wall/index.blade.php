@@ -16,7 +16,7 @@
             <li class="breadcrumb-item active">Giant Wall</li>
           </ol>
           {{-- @can('Create Bandara') --}}
-            <a href="{{ route('formgw.create') }}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i>Create New</a>
+            <a href="{{ route('formgw.create') }}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</a>
           {{-- @endcan --}}
         </div>
       </div>
@@ -50,15 +50,24 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  <td>1</td>
-                  <td>04-05-2019</td>
-                  <td>Laporan</td>
-                  <td>Teknisi</td>
-                  <td>okok</td>
-                  <td>
-                    <a href="#" class="btn btn-success"> Edit</a>
-                    <a href="#" class="btn btn-success"> Delete</a>
-                  </td>
+                  @php
+                      $no=0;
+                    @endphp
+                    @foreach ($E_loggw as $value)
+                      <tr>
+                        <td>{{ $no=$no+1 }}</td>
+                        <td>{{ $value->tgl_log }}</td>
+                        <td>{{ $value->uraian_lap }}</td>
+                        <td>{{ $value->jabatan }}</td>
+                        <td>{{ $value->ket }}</td>
+                        <td>
+                          {!! Form::open(['route'=>['formpots.destroy', $value->id], 'method'=>'DELETE']) !!}
+                            <a href="{{ route('formpots.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
+                            {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
+                          {!! Form::close() !!}
+                        </td>
+                      </tr>
+                    @endforeach
                 </tbody>
               </table>
             </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\E_log_pots;
+use App\E_log_gw;
 use Illuminate\Support\Facades\File;
 use Alert;
 class formgwController extends Controller
@@ -15,7 +15,8 @@ class formgwController extends Controller
      */
     public function index()
     {
-        return view ('content.giant_wall.index');
+        $E_loggw = E_log_gw::all();
+        return view ('content.giant_wall.index', compact('E_loggw'));
     }
 
     /**
@@ -44,7 +45,7 @@ class formgwController extends Controller
           'ket' => 'required'
         ]);
 
-        $data = new E_log_pots;
+        $data = new E_log_gw;
         $data->tgl_log = $request->tgl_log;
         $data->uraian_lap = $request->uraian_lap;
         $data->jabatan = $request->jabatan;
