@@ -1,7 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
 
+<<<<<<< HEAD
 <!-- Mirrored from eliteadmin.themedesigner.in/demos/bt4/eliteadmin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Mar 2018 16:52:01 GMT -->
 <head>
     <meta charset="utf-8">
@@ -29,41 +35,19 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+=======
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+>>>>>>> 04756e35bdca8f9280d69f114153b89c2c9503cf
 
-<body class="skin-blue fixed-layout">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
+                    You are logged in!
+                </div>
+            </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        @include('front.partials.header')
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-      @include('front.partials.leftbar')
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
-        @yield('content')
-        @include('front.partials.footer')
-    </div>
-  @include('front.partials.js')
-<!-- Mirrored from eliteadmin.themedesigner.in/demos/bt4/eliteadmin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Mar 2018 16:52:01 GMT -->
-</html>
+</div>
+@endsection

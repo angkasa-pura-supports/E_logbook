@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\E_log_gw;
+use Illuminate\Support\Facades\File;
+use Alert;
 class formgwController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class formgwController extends Controller
      */
     public function index()
     {
-        return view ('formgw');
+        $E_loggw = E_log_gw::all();
+        return view ('content.giant_wall.index', compact('E_loggw'));
     }
 
     /**
@@ -23,7 +26,7 @@ class formgwController extends Controller
      */
     public function create()
     {
-        //
+        return view ('content.giant_wall.create');
     }
 
     /**
@@ -34,7 +37,30 @@ class formgwController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+          'tgl_log' => 'required',
+          'uraian_lap' => 'required',
+          'jabatan' => 'required',
+          'lampiran' => 'required',
+          'ket' => 'required'
+        ]);
+
+        $data = new E_log_gw;
+        $data->tgl_log = $request->tgl_log;
+        $data->uraian_lap = $request->uraian_lap;
+        $data->jabatan = $request->jabatan;
+        if ($request->hasFile('lampiran')) {
+          $dir = 'uploads/giantWall';
+          $file = $request->file('lampiran');
+          $ext = $file->getClientOriginalExtension();
+          $newName = rand(100000,1001238912).".".$ext;
+          $file->move($dir,$newName);
+          $data->lampiran = $newName;
+        }
+        $data->ket = $request->ket;
+        $data->save();
+        Alert::success('Data berhasil disimpan!');
+        return redirect('formgw');
     }
 
     /**

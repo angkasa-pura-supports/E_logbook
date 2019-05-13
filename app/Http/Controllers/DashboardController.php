@@ -28,6 +28,18 @@ class DashboardController extends Controller
      */
     public function create()
     {
+        // Role::create(['name'=>'create']);
+        // Permission::create(['name'=>'edit bandara']);
+        // auth()->user()->givePermissionTo('edit bandara');
+        // Role::create(['name'=>'SuperAdmin']);
+        // Role::create(['name'=>'Pimpinan']);
+        // Role::create(['name'=>'Admin']);
+        // Role::create(['name'=>'User']);
+
+        // Permission::create(['name'=>'Create Bandara']);
+        // Permission::create(['name'=>'Read Bandara']);
+        // Permission::create(['name'=>'Update Bandara']);
+        // Permission::create(['name'=>'Delete Bandara']);
         return view('content.dashboard.index');
     }
 
